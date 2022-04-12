@@ -18,7 +18,7 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 |---:|------------------|:-----------------|
 | 1 | 2022-04-12 Ter   | Apresentação da disciplina ([slides](https://docs.google.com/presentation/d/1TRYCyxJVxvltjvEDIneNl-2YCT2Ys2RNN4BRObkhfVE/edit?usp=sharing) e [vídeo](https://youtu.be/cUiFPopsXR4))   |
 | 2 | 2022-04-14 Qui   | [Introdução C++](./aulas/introducao_cxx) ([vídeo](https://youtu.be/pB-MdBKNpNo), [slides](./aulas/02_intro_cxx/02_intro_cxx.pdf))  |
-| 3 | 2022-04-19 Ter | Sobre [T1](./trabalhos/T1), teste o [GitHub aqui](https://classroom.github.com/a/ysB_LJGy) |
+| 3 | 2022-04-19 Ter | Sobre [T1](./trabalhos/T1) |
 | - | 2022-05-21 Qui | **Feriado** (Tiradentes) |
 | 4 | 2022-04-26 Ter |  Alocação dinâmica de memória ([vídeo](https://youtu.be/KxvOkY4ipII), [slides](./aulas/03_memoria/03_memoria.pdf))  |
 | 5 | 2022-04-28 Qui |  Sobre [T2](./trabalhos/T2) ([vídeo](https://drive.google.com/file/d/1FoTa5SvtQtKVaXLpHCjXlUuTFU_MArHn/view?usp=sharing)) |
