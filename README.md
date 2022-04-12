@@ -21,7 +21,7 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | 3 | 2022-04-19 Ter | Sobre [T1](./trabalhos/T1) |
 | - | 2022-05-21 Qui | **Feriado** (Tiradentes) |
 | 4 | 2022-04-26 Ter |  Alocação dinâmica de memória ([vídeo](https://youtu.be/KxvOkY4ipII), [slides](./aulas/03_memoria/03_memoria.pdf))  |
-| 5 | 2022-04-28 Qui |  Sobre [T2](./trabalhos/T2) ([vídeo](https://drive.google.com/file/d/1FoTa5SvtQtKVaXLpHCjXlUuTFU_MArHn/view?usp=sharing)) |
+| 5 | 2022-04-28 Qui |  Sobre [T2](./trabalhos/T2) |
 | 6 | 2022-05-03 Ter | |
 | 7 | 2022-05-05 Qui | |
 | 8 | 2022-05-10 Ter | |
