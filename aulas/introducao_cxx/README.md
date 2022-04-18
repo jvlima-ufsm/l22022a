@@ -91,10 +91,10 @@ ou ```double*``` para ```int*```.
 - ```reinterpret_cast``` converte tipos não relacionados como inteiro para
   ponteiro, ou vice-versa.
 - ```const_cast``` converte tipos que deferem quando são ```const``` ou ```volatile```.
-- ```dynamic_cast``` (/não usado aqui/) converte com checagem de tipo em
+- ```dynamic_cast``` (*não usado aqui*) converte com checagem de tipo em
   tempo de execução.
-Alguns exemplos:
 
+Alguns exemplos:
 ```C++
 int num = 97;                        // inteiro
 char letra = static_cast<char>(num); // agora letra A
