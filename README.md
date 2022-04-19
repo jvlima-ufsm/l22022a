@@ -1,6 +1,8 @@
 # ELC1067 - Laboratório de Programação II
 
-Professor: [João Vicente Ferreira Lima](http://www.inf.ufsm.br/~jvlima).
+Professor: [João Vicente Ferreira Lima](http://www.inf.ufsm.br/~jvlima)
+
+Contato: jvlima em inf.ufsm.br ou CT/UFSM sala 380 Anexo B.
 
 Carga horária: 60h.
 
