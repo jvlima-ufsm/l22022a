@@ -10,6 +10,8 @@ Ementa oficial: https://www.ufsm.br/ementario/disciplinas/elc1067/
 
 Horários: terças e quintas, 10:30 às 12:30.
 
+Página do corretor: https://l22022a.github.io/
+
 ## Sobre a disciplina
 
 O objetivo da disciplina de Laboratório de Programação II é utilizar as principais estruturas de dados para solucionar problemas ligados à Computação.
