@@ -6,7 +6,7 @@ Contato: jvlima em inf.ufsm.br ou CT/UFSM sala 380 Anexo B.
 
 Carga horária: 60h.
 
-Ementa oficial: https://www.ufsm.br/ementario/disciplinas/elc1067/
+Ementa oficial: https://www.ufsm.br/ementario/disciplinas/ELC1067
 
 Horários: terças e quintas, 10:30 às 12:30.
 
@@ -26,11 +26,11 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | - | 2022-05-21 Qui | **Feriado** (Tiradentes) |
 | 4 | 2022-04-26 Ter |  Alocação dinâmica de memória ([vídeo](https://youtu.be/KxvOkY4ipII), [slides](./aulas/03_memoria/03_memoria.pdf))  |
 | 5 | 2022-04-28 Qui |  Sobre [T2](./trabalhos/T2) |
-| 6 | 2022-05-03 Ter | |
-| 7 | 2022-05-05 Qui | |
+| 6 | 2022-05-03 Ter | Alocação dinâmica de memória |
+| 7 | 2022-05-05 Qui | Sobre [T3](./trabalhos/T3) |
 | 8 | 2022-05-10 Ter | |
 | 9 | 2022-05-12 Qui | |
-| 10 | 2022-05-17 Ter | |
+| - | 2022-05-17 Ter | **Feriado** (Aniversário de Santa Maria)  |
 | 11 | 2022-05-19 Qui | |
 | 12 | 2022-05-24 Ter | |
 | 13 | 2022-05-26 Qui | |
