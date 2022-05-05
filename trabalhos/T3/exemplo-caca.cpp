@@ -44,7 +44,8 @@ int main(void)
     while( sair != 0 ){
         while( caca_get_event(dp, CACA_EVENT_ANY, &ev, 0) ){
             if( caca_get_event_type(&ev) & CACA_EVENT_KEY_PRESS ){
-                switch (caca_get_event_key_ch(&ev))
+                int tecla = caca_get_event_key_ch(&ev);
+                switch ( tecla )
                 {
                 case CACA_KEY_ESCAPE:
                     sair = 0;
@@ -82,8 +83,8 @@ int main(void)
                 case CACA_KEY_RETURN:
                     std::cout << "Enter" << std::endl;
                     break;
-                
                 default:
+                    std::cout << "TECLA -> " << static_cast<char>(tecla) << std::endl;
                     break;
                 }
                 // atualiza a tela
