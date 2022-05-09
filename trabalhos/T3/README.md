@@ -14,7 +14,7 @@ que utiliza alocação dinâmica de memória.
 
 Os comandos básicos são:
 - ESQ: sair do editor.
-- CTRL+s: gravar arquivo e sair do modo edição.
+- CTRL+D: gravar arquivo e sair do modo edição.
 - ENTER: quebra linha.
 Outros comandos podem ser adicionados.
 
