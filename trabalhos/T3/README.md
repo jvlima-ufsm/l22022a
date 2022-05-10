@@ -18,6 +18,9 @@ Os comandos básicos são:
 - ENTER: quebra linha.
 Outros comandos podem ser adicionados.
 
+O editor deve trabalhar com os arquivos:
+- `texto.txt` como entrada.
+- `saida.txt` como saída.
 
 O laço principal do programa será:
 ```c++
@@ -141,6 +144,18 @@ g++ -Wall  -o exemplo-caca exemplo-caca.cpp -lcaca
 - Guarde cada linha lida em um `std::vector` de tipo `char*` alocado dinâmicamente.
 - Veja como ler uma linha inteira [aqui](../..//aulas/introducao_cxx#entrada-e-saída)
 - O código abaixo é um exemplo de como converter `std:string` para `char*`
+
+## Como simular a libcaca para correção 
+
+O "simulador" de libcaca elimina a parte gráfica e envia comandos para simular 
+um usuário. Essa versão não implementa todas as funções da libcaca e usa apenas as principais.
+
+Primeiro compile o seu programa com o arquivo [libcaca.cpp](libcaca.cpp):
+```
+$ g++ -Wall -g -o exemplo-caca exemplo-caca.cpp
+```
+
+**NÃO MODIFIQUE O ARQUIVO**: os comandos da correção não podem ser alterados.
 
 ## Regras
 
