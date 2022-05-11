@@ -28,7 +28,7 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | 5 | 2022-04-28 Qui |  Sobre [T2](./trabalhos/T2) |
 | 6 | 2022-05-03 Ter | Alocação dinâmica de memória |
 | 7 | 2022-05-05 Qui | Sobre [T3](./trabalhos/T3) |
-| 8 | 2022-05-10 Ter | |
+| 8 | 2022-05-10 Ter | [Suporte no Windows para C++](./aulas/08_windows) |
 | 9 | 2022-05-12 Qui | |
 | - | 2022-05-17 Ter | **Feriado** (Aniversário de Santa Maria)  |
 | 11 | 2022-05-19 Qui | |

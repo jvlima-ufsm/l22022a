@@ -19,6 +19,17 @@ void simul_inicia_eventos(void)
 
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_CTRL_D, 0, '\0'} );
 
+    // cria uma frase e digiter enter para quebrar linha
+    simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_RETURN, 0, '\0'} );
+    for(auto i = 0; i < 4; i++)
+        simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_LEFT, 0, '\0'} );
+    for(auto i = 0; i < 10; i++)
+        simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, static_cast<int>('e'), 0, '\0'} );
+    for(auto i = 0; i < 5; i++)
+        simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_DOWN, 0, '\0'} );
+    simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_HOME, 0, '\0'} );
+
+    // junta duas linhas
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_BACKSPACE, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_HOME, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, static_cast<int>('h'), 0, '\0'} );
@@ -34,17 +45,20 @@ void simul_inicia_eventos(void)
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_HOME, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_DOWN, 0, '\0'} );
 
+    // insere a em area vazia
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, static_cast<int>('a'), 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_BACKSPACE, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_DOWN, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_DOWN, 0, '\0'} );
 
+    // testa apagar/inserir b bem apos fim de linha
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, static_cast<int>('b'), 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_BACKSPACE, 0, '\0'} );
     for(auto i = 0; i < 5; i++)
         simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_RIGHT, 0, '\0'} );
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_END, 0, '\0'} );
 
+    // teste simples de inserir a
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, static_cast<int>('a'), 0, '\0'} );
 }
 
@@ -404,5 +418,4 @@ int caca_get_event_mouse_button(caca_event_t const *){ return 0; }
 int caca_get_event_mouse_x(caca_event_t const *){ return 0; }
 int caca_get_event_mouse_y(caca_event_t const *){ return 0; }
 int caca_get_event_resize_width(caca_event_t const *){ return 0; }
-int caca_get_event_resize_height(caca_event_t const *){ return 0; }
-
+int caca_get_event_resize_height(caca_event_t const *){ return 0
