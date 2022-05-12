@@ -19,6 +19,11 @@ void simul_inicia_eventos(void)
 
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_CTRL_D, 0, '\0'} );
 
+    // testa grudar linha com linha vazia antes
+    simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_BACKSPACE, 0, '\0'} );
+    simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_HOME, 0, '\0'} );
+    simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_UP, 0, '\0'} );
+    
     // cria uma frase e digiter enter para quebrar linha
     simul_eventos.push_back( {CACA_EVENT_KEY_PRESS, CACA_KEY_RETURN, 0, '\0'} );
     for(auto i = 0; i < 4; i++)
@@ -418,4 +423,4 @@ int caca_get_event_mouse_button(caca_event_t const *){ return 0; }
 int caca_get_event_mouse_x(caca_event_t const *){ return 0; }
 int caca_get_event_mouse_y(caca_event_t const *){ return 0; }
 int caca_get_event_resize_width(caca_event_t const *){ return 0; }
-int caca_get_event_resize_height(caca_event_t const *){ return 0
+int caca_get_event_resize_height(caca_event_t const *){ return 0; }

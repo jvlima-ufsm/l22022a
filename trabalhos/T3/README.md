@@ -16,6 +16,9 @@ Os comandos básicos são:
 - ESQ: sair do editor.
 - CTRL+D: gravar arquivo e sair do modo edição.
 - ENTER: quebra linha.
+- END: cursor fica no fim de linha, após o último caractere
+- HOME: cursor move para o começo da linha.
+- BACKSPACE: remove o caractere antes do curso, e move o curso uma posição a esquerda. Pode unir duas linhas.
 Outros comandos podem ser adicionados.
 
 O editor deve trabalhar com os arquivos:
@@ -153,6 +156,25 @@ um usuário. Essa versão não implementa todas as funções da libcaca e usa ap
 Primeiro compile o seu programa com o arquivo [libcaca.cpp](libcaca.cpp):
 ```
 $ g++ -Wall -g -o exemplo-caca exemplo-caca.cpp
+```
+
+A saída esperada do Valgrind será:
+```
+$ valgrind --leak-check=full ./a.out 
+==780087== Memcheck, a memory error detector
+==780087== Copyright (C) 2002-2017, and GNU GPL'd, by Julian Seward et al.
+==780087== Using Valgrind-3.15.0 and LibVEX; rerun with -h for copyright info
+==780087== Command: ./a.out
+==780087== 
+==780087== 
+==780087== HEAP SUMMARY:
+==780087==     in use at exit: 0 bytes in 0 blocks
+==780087==   total heap usage: 42 allocs, 42 frees, 95,019 bytes allocated
+==780087== 
+==780087== All heap blocks were freed -- no leaks are possible
+==780087== 
+==780087== For lists of detected and suppressed errors, rerun with: -s
+==780087== ERROR SUMMARY: 0 errors from 0 contexts (suppressed: 0 from 0)
 ```
 
 **NÃO MODIFIQUE O ARQUIVO**: os comandos da correção não podem ser alterados.
