@@ -3,118 +3,273 @@
  * Programa exemplo de utilizacao da libcaca.
  * Instalacao em um sistema Debian/Ubuntu:
  * $ sudo apt install libcaca-dev
- * 
+ *
  * Documentacao em:
  * http://caca.zoy.org/doxygen/libcaca/index.html
-*/
+ */
 
-#include <iostream>
 #include <caca.h>
+#include <cstring>
+#include <fstream>
+#include <iostream>
+#include <unistd.h>
+#include <vector>
 
-int main(void)
-{
-    int sair = 1; // sinal para sair
-    int cursor_x = 0; // coluna do cursor
-    int cursor_y = 0; // linha do cursor
-    caca_canvas_t *cv; caca_display_t *dp; caca_event_t ev;
+struct Editor {
+        std::vector<char *> linhas;  // linhas do editor
+        bool sair;      // sinal para sair
+        unsigned int cursor_x;   // coluna do cursor
+        unsigned int cursor_y;   // linha do cursor
+        unsigned int nlinhas;    // maximo de linhas
+        unsigned int ncolunas;   // maximo de colunas
+        caca_canvas_t *cv;
+        caca_display_t *dp;
+        caca_event_t ev;
 
-    dp = caca_create_display(NULL);
-    if(!dp)
-        return 1;
-    cv = caca_get_canvas(dp);
-    caca_set_cursor(dp, 1);
-    caca_set_mouse(dp, 1);
-    caca_set_display_title(dp, "Editor Caca");
-    caca_clear_canvas(cv);
-    caca_set_color_ansi(cv, CACA_WHITE, CACA_BLACK);
+        void inicia(void) {
+                // cria  atela
+                dp = caca_create_display(NULL);
+                if (!dp)
+                        throw std::runtime_error{
+                            "Nao foi possivel abrir janela!"};
+                cv = caca_get_canvas(dp);
+                caca_set_cursor(dp, 1);
+                caca_set_mouse(dp, 1);
+                caca_set_display_title(dp, "Editor Caca");
+                caca_clear_canvas(cv);
+                caca_set_color_ansi(cv, CACA_WHITE, CACA_BLACK);
 
-    // Escreve linhas na tela
-    caca_put_str(cv, 0, 0, "Essa linha e um teste");
-    caca_put_str(cv, 0, 1, "Digite ESQ para sair.");
-    caca_put_str(cv, 0, 2, "Digite END para limpar a tela.");
-    caca_printf(cv, 0, 4, "Tamanho da tela: %d x %d", 
-       caca_get_canvas_width(cv),  caca_get_canvas_height(cv));
+                // inicia as variaveis principais
+                sair = false;
+                cursor_x = 0;
+                cursor_y = 0;
+                ncolunas = caca_get_canvas_width(cv);
+                nlinhas = caca_get_canvas_height(cv);
+                // std::cout << "Tamanho da tela: " << caca_get_canvas_width(cv)
+                //    << " " << caca_get_canvas_height(cv) << std::endl;
+        }
 
-    caca_gotoxy(cv, cursor_x, cursor_y);
-    //caca_set_color_ansi(cv, CACA_WHITE, CACA_RED);
-    //caca_put_char(cv, 1, 0, "This is a message");
-    caca_refresh_display(dp);
-    
-    // laco principal
-    while( sair != 0 ){
-        while( caca_get_event(dp, CACA_EVENT_ANY, &ev, 0) ){
-            if( caca_get_event_type(&ev) & CACA_EVENT_KEY_PRESS ){
-                int tecla = caca_get_event_key_ch(&ev);
-                switch ( tecla )
-                {
-                case CACA_KEY_ESCAPE:
-                    sair = 0;
-                    break;
-                case CACA_KEY_END:
-                    caca_clear_canvas(cv);
-                    break;
-                case CACA_KEY_UP:
-                    // cima
-                    std::cout << "Seta cima" << std::endl;
-                    cursor_y--; // testar limites
-                    caca_gotoxy(cv, cursor_x, cursor_y);
-                    break;
-                case CACA_KEY_DOWN:
-                    // baixo
-                    std::cout << "Seta baixo" << std::endl;
-                    cursor_y++; // testar limites
-                    caca_gotoxy(cv, cursor_x, cursor_y);
-                    break;
-                case CACA_KEY_LEFT:
-                    // esquerda
-                    std::cout << "Seta esquerda" << std::endl;
-                    cursor_x--; // testar limites
-                    caca_gotoxy(cv, cursor_x, cursor_y);
-                    break;
-                case CACA_KEY_RIGHT:
-                    // direita
-                    std::cout << "Seta direita" << std::endl;
-                    cursor_x++; // testar limites
-                    caca_gotoxy(cv, cursor_x, cursor_y);
-                    break;
-                case CACA_KEY_BACKSPACE:
-                    std::cout << "Backspace" << std::endl;
-                    break;
-                case CACA_KEY_RETURN:
-                    std::cout << "Enter" << std::endl;
-                    break;
-                default:
-                    std::cout << "TECLA -> " << static_cast<char>(tecla) << std::endl;
-                    break;
+        // fecha o aplicativo e libera tudo
+        void finaliza(void) {
+                caca_free_display(dp);
+                destroi();
+        }
+
+        // insere uma linha no editor, com alocacao dinamica
+        void insere(std::string &linha) {
+                
+                char *vetor;
+                if (linha.size() == 0)
+                        linhas.push_back(nullptr);
+                else {
+                        vetor = new char[linha.size() + 1];
+                        strncpy(vetor, linha.c_str(), linha.size());
+                        vetor[linha.size()] = '\0';
+                        linhas.push_back(vetor);
                 }
-                // atualiza a tela
+        }
+
+        // remove a ultima linha sem liberar memoria
+        // retorna a linha como char*
+        char *remove(void) {
+                char *l = linhas.back(); // pega ultima linha
+                linhas.pop_back();       // remove ultima linha
+                return l;
+        }
+
+        int tamanho(void) const {
+                return linhas.size();
+        }
+
+        // precisa liberar toda memoria alocada
+        void destroi(void) {
+                // libera toda a memória
+                for(auto it = linhas.begin(); it != linhas.end(); it++){
+                    if(*it != nullptr)
+                        delete[] (*it);
+                }
+                linhas.clear();
+        }
+
+        // le um arquivo inteiro nessa struct editor
+        void carrega(std::string arquivo) {
+                std::ifstream entrada{arquivo};
+                std::string linha;
+                while (std::getline(entrada, linha)) {
+                        insere(linha);
+                }
+        }
+
+        // salva todas as linhas do editor em um arquivo texto
+        void salva(std::string s) {
+                std::ofstream saida{s};
+                for (auto it = linhas.begin(); it != linhas.end(); it++) {
+                        if (*it != nullptr)
+                                saida << *it << std::endl;
+                        else
+                                saida << std::endl;
+                }
+        }
+
+        // move cursor
+        void move_esq(void) {
+                if (cursor_x > 0)
+                        cursor_x--;
+        }
+
+        // move cursor
+        void move_dir(void) {
+                if (cursor_x < (ncolunas - 1))
+                        cursor_x++;
+        }
+
+        // move cursor
+        void move_cima(void) {
+                if (cursor_y > 0)
+                        cursor_y--;
+        }
+
+        // move cursor
+        void move_baixo(void) {
+                if (cursor_y < (nlinhas - 1))
+                        cursor_y++;
+        }
+
+        // move cursor
+        void move_end(void) {
+                if (cursor_y < linhas.size() && linhas[cursor_y] != nullptr)
+                        cursor_x = strlen(linhas[cursor_y]);
+                else
+                        cursor_x = 0;
+        }
+
+        // move cursor
+        void move_home(void) {
+                cursor_x = 0;
+        }
+
+        // insere um caractere na posicao atual do cursor. 
+        // - depois move cursor para direita
+        // - se estiver em uma linha vazia (nullptr) cria linha
+        // - se estiver apos o fim da linha, cria espacos
+        // - se estiver apos a ultima linha, cria linhas nullptr vazias
+        void insere_char(const char c) {
+            // TODO
+        }
+
+        // remove um caracter (BACKSPACE) antes da posicao do cursor
+        // - move cursor para esquerda
+        // - se esta no comeco da linha, gruda a linha com a de cima
+        // - se a linha ficar vazia, libera memoria e deixa nullptr
+        // - cursor em espaco vazio, faz nada
+        void remove_char(void) {
+            // TODO
+        }
+
+        // gruda linha atual com a de cima.
+        // - move cursos para cima
+        // - se a linha atual, ou a de cima, esta vazia, apenas remove a linha
+        // - se esta em espaco vazio, nao tem efeito
+        void gruda_linha(void) {
+            // TODO
+        }
+
+        // quebra a linha no cursor, onde a nova linha comeca com o caractere do cursor
+        // - o cursor move para a proxima linha, comeco da linha
+        // - se esta em espaco vazio, faz nada
+        void quebra_linha(void) {
+            // TODO
+        }
+
+        void legenda(void) {
+            // TODO
+        }
+
+        bool verifica_fim(void) {
+                if (caca_get_event(dp, CACA_EVENT_ANY, &ev, 0)) {
+                        if (caca_get_event_type(&ev) & CACA_EVENT_KEY_PRESS) {
+                                int tecla = caca_get_event_key_ch(&ev);
+                                switch (tecla) {
+                                case CACA_KEY_ESCAPE:
+                                        sair = true;
+                                        break;
+                                case CACA_KEY_END:
+                                        move_end();
+                                        break;
+                                case CACA_KEY_HOME:
+                                        move_home();
+                                        break;
+                                case CACA_KEY_UP:
+                                        // cima
+                                        move_cima();
+                                        break;
+                                case CACA_KEY_DOWN:
+                                        // baixo
+                                        move_baixo();
+                                        break;
+                                case CACA_KEY_LEFT:
+                                        // esquerda
+                                        move_esq();
+                                        break;
+                                case CACA_KEY_RIGHT:
+                                        // direita
+                                        move_dir();
+                                        break;
+                                case CACA_KEY_BACKSPACE:
+                                        remove_char();
+                                        break;
+                                case CACA_KEY_DELETE:
+                                        break;
+                                case CACA_KEY_RETURN:
+                                        quebra_linha();
+                                        break;
+                                case CACA_KEY_CTRL_D:
+                                        salva("saida.txt");
+                                        break;
+                                default:
+                                        insere_char(static_cast<char>(tecla));
+                                        break;
+                                } // switch
+                        } // if key
+                } // if event
+
+                return sair;
+        }
+
+        void atualiza(void) {
+                unsigned int n;
+                auto it = linhas.begin();
+                // limpa a tela
+                caca_clear_canvas(cv);
+                // desenha o texto
+                for (n = 0, it = linhas.begin();
+                     it != linhas.end() && n < nlinhas; it++, n++) {
+                        if ((*it) != nullptr) {
+                                // std::cout << *it << std::endl;
+                                caca_put_str(cv, 0, n, *it);
+                        }
+                }
+                // posiciona cursor
+                caca_gotoxy(cv, cursor_x, cursor_y);
+                // manda mostrar tudo na tela
                 caca_refresh_display(dp);
-            }
-            else if(caca_get_event_type(&ev) & CACA_EVENT_MOUSE_PRESS){
-                std::cout << "Mouse! Btn pressionado: ";
-                switch(caca_get_event_mouse_button(&ev)){
-                    case 1:
-                        std::cout << "esquerda" << std::endl;
-                        break;
-                    case 2: 
-                        std::cout << "direita" << std::endl;
-                        break;
-                    case 3:
-                        std::cout << "meio" << std::endl;
-                        break;
-                    default:
-                        std::cout << "nao sei" << std::endl;
-                }
-            }
-            else if(caca_get_event_type(&ev) & CACA_EVENT_MOUSE_MOTION){
-                std::cout << "Mouse! Posicao: " << 
-                    caca_get_event_mouse_x(&ev) << " " <<
-                    caca_get_event_mouse_y(&ev) << std::endl;
+                // dorme um pouco
+                usleep(100);
+        }
+        // pode adicionar mais funcoes!
+}; // fim do editor
 
-            }
-        } // while
-    } // while
-    caca_free_display(dp);
-    return 0;
+int main(int argc, char **argv) {
+        Editor editor;
+
+        editor.inicia();
+        editor.carrega("texto.txt");
+        //editor.legenda();
+
+        while (editor.verifica_fim() == false) {
+                editor.atualiza();
+        }
+        editor.finaliza();
+
+        return 0;
 }
-
