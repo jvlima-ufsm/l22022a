@@ -30,8 +30,7 @@ struct Editor {
                 // cria  atela
                 dp = caca_create_display(NULL);
                 if (!dp)
-                        throw std::runtime_error{
-                            "Nao foi possivel abrir janela!"};
+                        throw std::runtime_error{"Nao foi possivel abrir janela!"};
                 cv = caca_get_canvas(dp);
                 caca_set_cursor(dp, 1);
                 caca_set_mouse(dp, 1);
@@ -57,7 +56,6 @@ struct Editor {
 
         // insere uma linha no editor, com alocacao dinamica
         void insere(std::string &linha) {
-                
                 char *vetor;
                 if (linha.size() == 0)
                         linhas.push_back(nullptr);
