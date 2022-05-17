@@ -155,7 +155,7 @@ um usuário. Essa versão não implementa todas as funções da libcaca e usa ap
 
 Primeiro compile o seu programa com o arquivo [libcaca.cpp](libcaca.cpp):
 ```
-$ g++ -Wall -g -o exemplo-caca exemplo-caca.cpp
+$ g++ -Wall -g -o exemplo-caca exemplo-caca.cpp libcaca.cpp
 ```
 
 A saída esperada do Valgrind será:
