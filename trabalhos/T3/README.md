@@ -3,7 +3,7 @@
 
 ## Deadline
 
-Prazo: **19/05/2022 (Qui)** pelo link do GitHub (https://classroom.github.com/a/kh7u5EKO).
+Prazo: **27/05/2022 (Sex)** pelo link do GitHub (https://classroom.github.com/a/kh7u5EKO).
 
 Você deve escolher seu nome na lista de alunos. Em seguida, o GitHub irá criar um repositório deste trabalho em seu usuário.
 

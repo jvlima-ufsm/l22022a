@@ -29,14 +29,15 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | 6 | 2022-05-03 Ter | Alocação dinâmica de memória |
 | 7 | 2022-05-05 Qui | Sobre [T3](./trabalhos/T3) |
 | 8 | 2022-05-10 Ter | [Suporte no Windows para C++](./aulas/08_windows) |
-| 9 | 2022-05-12 Qui | |
+| 9 | 2022-05-12 Qui | [T3](./trabalhos/T3) |
 | - | 2022-05-17 Ter | **Feriado** (Aniversário de Santa Maria)  |
-| 11 | 2022-05-19 Qui | |
-| 12 | 2022-05-24 Ter | |
-| 13 | 2022-05-26 Qui | |
-| 14 | 2022-05-31 Ter | |
-| 15 | 2022-06-02 Qui | |
-| - | 2021-11-29  Seg | [Listas em C++](./aulas/09_listas) |
+| 11 | 2022-05-19 Qui | [T3](./trabalhos/T3) |
+| - | 2022-05-24 Ter | **Sem aula** |
+| 12 | 2022-05-26 Qui | [T3](./trabalhos/T3) |
+| 13 | 2022-05-31 Ter | [Listas em C++](./aulas/09_listas) |
+| 14 | 2022-06-02 Qui | [T4](./trabalhos/T4) |
+| 15 | 2022-06-07 Ter | T5 |
+| 16 | 2022-06-09 Qui |  |
 | - | 2021-12-01  Qua | [Smart pointers](./aulas/11_pointers/) |
 | - | 2021-12-13  Seg | [Pilhas em C++](./aulas/13_pilhas) |
 | - | 2022-01-19 Qua | [Containers e Algoritmos C++ STL](./aulas/20_algorithms) |
