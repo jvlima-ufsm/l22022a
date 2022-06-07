@@ -12,6 +12,8 @@ Horários: terças e quintas, 10:30 às 12:30.
 
 Página do corretor: https://l22022a.github.io/
 
+Calendário UFSM: https://www.ufsm.br/calendario/
+
 ## Sobre a disciplina
 
 O objetivo da disciplina de Laboratório de Programação II é utilizar as principais estruturas de dados para solucionar problemas ligados à Computação.
