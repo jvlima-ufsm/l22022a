@@ -87,4 +87,3 @@ Segue as seguintes propriedades sobre árvores binárias:
 O número de comparações em uma busca com sucesso no melhor caso é 
 $C(n)= 1$, pior caso $C(n) = n$ e caso médio $C(n) = \log  n$.
 O pior caso ocorre quando as chaves são inseridas em ordem crescente ou decrescente.
-``
