@@ -39,8 +39,24 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | 13 | 2022-05-31 Ter | [Listas em C++](./aulas/09_listas), [T4](./trabalhos/T4) |
 | 14 | 2022-06-02 Qui | [Sobre T5](./trabalhos/T5) |
 | 15 | 2022-06-07 Ter | [T5](./trabalhos/T5)  |
-| 16 | 2022-06-09 Qui |  |
-| - | 2021-12-01  Qua | [Smart pointers](./aulas/11_pointers/) |
+| 16 | 2022-06-09 Qui | Árvore binária de busca (ABB)  |
+| 17 | 2022-06-14 Ter | [Smart pointers](./aulas/11_pointers/) |
+| - | 2022-06-16 Qui |  **Feriado** (Copus Christi) |
+| 18 | 2022-06-21 Ter |  |
+| 19 | 2022-06-23 Qui |  |
+| 20 | 2022-06-28 Ter |  |
+| 21 | 2022-06-30 Qui |  |
+| 22 | 2022-07-05 Ter |  |
+| 23 | 2022-07-07 Qui |  |
+| 24 | 2022-07-12 Ter |  |
+| 25 | 2022-07-14 Qui |  |
+| 26 | 2022-07-19 Ter |  |
+| 27 | 2022-07-21 Qui |  |
+| 28 | 2022-07-26 Ter |  |
+| 29 | 2022-07-28 Qui |  |
+| 30 | 2022-08-02 Ter |  |
+| - | 2022-08-04 Qui |  |
+| - | 2021-12-01  Qua |  |
 | - | 2021-12-13  Seg | [Pilhas em C++](./aulas/13_pilhas) |
 | - | 2022-01-19 Qua | [Containers e Algoritmos C++ STL](./aulas/20_algorithms) |
 | - | 2022-08-23 Ter | Avaliações Finais |
