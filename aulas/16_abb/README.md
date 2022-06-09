@@ -21,6 +21,19 @@ A figura abaixo ilustra um exemplo de uma árvore de busca binária.
 
 ![abb](abb.png)
 
+Um código exemplo está disponível no arquivo [abb.cpp](abb.cpp) como o
+uso de templates C++:
+```C++
+template<typename T>
+struct Arvore {
+    T dado;
+    Arvore<T>* esq;
+    Arvore<T>* dir;
+
+	// restante do código ...
+};
+```
+
 ## Busca 
 
 Os passos na operação de `busca` para uma chave `x` são:
