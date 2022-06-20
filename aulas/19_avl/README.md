@@ -29,9 +29,10 @@ O **fator de balanceamento** (FB) de um nó é a diferença entre
 a altura da sub-árvore da esquerda e a altura da sub-árvore da direita.
 Se não existir uma sub-árvore, a altura é zero.
 Os resultados de um FB são:
-- maior que zero ($> 0$) - sub-árvore da direita é menor.
-- menor que zero ($< 0$) - sub-árvore da esquerda é menor.
-- igual a zero ($= 0$) - sub-árvores tem a mesma altura.
+- Maior que zero ($> 0$) - sub-árvore da direita é menor.
+- Menor que zero ($< 0$) - sub-árvore da esquerda é menor.
+- Igual a zero ($= 0$) - sub-árvores tem a mesma altura.
+
 Os valores válidos de FB são $-1$ (sub-árvore da esquerda é menor), $0$, $1$
 (sub-árvore da direita é menor).
 
@@ -40,8 +41,8 @@ Os valores válidos de FB são $-1$ (sub-árvore da esquerda é menor), $0$, $1$
 O nó é inserido como em uma árvore binária comum.
 Se a inserção não degenerar a árvore, o processo termina.
 Caso contrário, é necessário:
-- encontrar o nó cujo FB esteja fora do intervalo (pivô).
-- realizar uma rotação na árvore a partir do nó *pivô* (rotação simples ou rotação dupla).
+- Encontrar o nó cujo FB esteja fora do intervalo (pivô).
+- Realizar uma rotação na árvore a partir do nó *pivô* (rotação simples ou rotação dupla).
 
 Apenas uma rotação (simples ou dupla) é necessária.
 Após essa rotação, a árvore já estará balanceada.
@@ -87,10 +88,10 @@ com rotação simples a esquerda.
 ## Análise
 
 Entre as possíveis operações temos:
-- **rotação** única custo $O(1)$ pois é constante.
-- **busca**  é $O(\log n)$ pois a altura de árvore é $O(\log n)$
+- **Rotação** única custo $O(1)$ pois é constante.
+- **Busca**  é $O(\log n)$ pois a altura de árvore é $O(\log n)$
 e não necessita balanceamento.
-- **inserção** é $O(\log n)$ com o custo da busca incial de $O(\log n)$
+- **Inserção** é $O(\log n)$ com o custo da busca incial de $O(\log n)$
 e mais balanceamento para manter FP tem custo $O(\log n)$.
-- **remoção** é $O(\log n)$ com a busca inicial de $O(\log n)$ mais
+- **Remoção** é $O(\log n)$ com a busca inicial de $O(\log n)$ mais
 balanceamento para manter FP tem custo $O(\log n)$.
