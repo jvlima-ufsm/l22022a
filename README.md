@@ -42,7 +42,7 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | 16 | 2022-06-09 Qui | [Árvore binária de busca (ABB)](./aulas/16_abb/)  |
 | 17 | 2022-06-14 Ter | [Smart pointers](./aulas/11_pointers/) |
 | - | 2022-06-16 Qui |  **Feriado** (Copus Christi) |
-| 18 | 2022-06-21 Ter |  |
+| 18 | 2022-06-21 Ter | [T5](./trabalhos/T5) |
 | 19 | 2022-06-23 Qui |  |
 | 20 | 2022-06-28 Ter |  |
 | 21 | 2022-06-30 Qui |  |
