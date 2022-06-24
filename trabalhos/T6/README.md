@@ -3,7 +3,7 @@
 
 ## Deadline
 
-Prazo: **28/07/2022 (Qui)** pelo link do GitHub (TODO).
+Prazo: **28/07/2022 (Qui)** pelo link do GitHub (https://classroom.github.com/a/uXLYJNei).
 
 Se necessário, você deve escolher seu nome na lista de alunos. Em seguida, o GitHub irá criar um repositório deste trabalho em seu usuário.
 
@@ -55,6 +55,8 @@ make
 
 ## Dicas
 - Procure materias sobre árvores ABB e AVL
+- [Introduction to Algorithms 2020 - AVL Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec7/)
+- - [Introduction to Algorithms 2008 - AVL Trees](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2008/resources/lec4/)
 
 ## Regras
 
