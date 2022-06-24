@@ -55,8 +55,8 @@ make
 
 ## Dicas
 - Procure materias sobre árvores ABB e AVL
-- [Introduction to Algorithms 2020 - AVL Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec7/)
-- - [Introduction to Algorithms 2008 - AVL Trees](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2008/resources/lec4/)
+- [MIT - Introduction to Algorithms (2020) - AVL Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec7/)
+- [MIT - Introduction to Algorithms (2008) - AVL Trees](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2008/resources/lec4/)
 
 ## Regras
 
