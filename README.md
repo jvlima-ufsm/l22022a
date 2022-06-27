@@ -44,8 +44,8 @@ O objetivo da disciplina de Laboratório de Programação II é utilizar as prin
 | - | 2022-06-16 Qui |  **Feriado** (Copus Christi) |
 | 18 | 2022-06-21 Ter | [T5](./trabalhos/T5) |
 | 19 | 2022-06-23 Qui | [Árvores balanceadas (AVL)](./aulas/19_avl/) |
-| 20 | 2022-06-28 Ter | [Sobre T6](./trabalhos/T6) |
-| 21 | 2022-06-30 Qui |  |
+| 20 | 2022-06-28 Ter | [Árvores AVL (continuação)](./aulas/20_avl/) |
+| 21 | 2022-06-30 Qui | [Sobre T6](./trabalhos/T6) |
 | 22 | 2022-07-05 Ter |  |
 | 23 | 2022-07-07 Qui |  |
 | 24 | 2022-07-12 Ter |  |
