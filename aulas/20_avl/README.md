@@ -78,7 +78,35 @@ Rotação_Direita_Esquerda( X )
 
 ## Remoção
 
-TODO
+A remoção irá envolver mais passos que uma remoção em ABB pois precisa atualizar alturas
+e verificar o balanceamento da ABB até a raiz.
+```
+Recursivamente encontra nó X com valor v
+
+Se uma das subárvores de X é nula
+    troca sub-árvore pelo nó X
+Senão
+    Encontra nó mínimo Y a direita de X
+    Troca conteúdo de X por Y
+    nó direita de X = recursivamente remove v de direita de X
+
+Atualiza alturas
+Calcula fator de balanceamento FB
+Se FB > 1
+    FBE = fator de balanceamento esquerda de X
+    Se FBE >= 0
+        return Rotação_Direita( X )
+    Senão
+        return Rotação_Esquerda_Direita( X )
+Se FB < -1
+    FBD = fator de balanceamento direita de X
+    Se FBD <= 0
+        return Rotação_Esquerda( X )
+    Senão
+        return Rotação_Direita_Esquerda( X )
+
+retorna X
+```
 
 ## Referências
 - [MIT - Introduction to Algorithms (2020) - AVL Notes](https://ocw.mit.edu/courses/6-006-introduction-to-algorithms-spring-2020/resources/mit6_006s20_lec7/)
