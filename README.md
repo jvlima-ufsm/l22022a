@@ -14,6 +14,8 @@ Página do corretor: https://l22022a.github.io/
 
 Calendário UFSM: https://www.ufsm.br/calendario/
 
+Notas disponíveis [AQUI](https://docs.google.com/spreadsheets/d/e/2PACX-1vQU220otK1dT7Q8-xpOqnOBYoztd7-2yVeK9jtxxL1PVIA5N_Rxa4qfRPU2KYlDikU4o8xup7-mKOAB/pubhtml).
+
 ## Sobre a disciplina
 
 O objetivo da disciplina de Laboratório de Programação II é utilizar as principais estruturas de dados para solucionar problemas ligados à Computação.
